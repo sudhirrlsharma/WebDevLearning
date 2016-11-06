@@ -1,0 +1,43 @@
+
+fieldset {
+    display: block;
+    border-style: solid;
+    border-color:#ffe633;
+    border-width: 10px;
+    background-color: #fdf49d;
+     border-radius: 5px;
+
+  }
+
+  #minHeight {
+    background: #c80707;
+  }
+  #maxHeight {
+    background: #7c10eb;
+  }
+
+  #minSalary{
+    background: #c80707;
+  }
+
+  #maxSalary{
+    background: #7c10eb;
+  }
+  .slidingLabel{
+      display: inline-block;
+      padding: 4px;
+      margin-top: 1px;
+      color: #fdf8f8;
+  }
+
+label{
+   display: inline-block;
+   float: left;
+   clear: left;
+   width: 250px;
+   text-align: right;
+}
+
+label:hover{
+  font-size: 150%;
+}

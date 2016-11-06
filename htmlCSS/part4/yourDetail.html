@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+  <title> Your details</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script type="text/javascript">
+
+  function uploadFile(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          // get loaded data and render thumbnail.
+          document.getElementById("imagePriview").src = e.target.result;
+   };
+   // read the image file as a data URL.
+   reader.readAsDataURL(input.files[0]);
+  }
+
+ }
+
+  </script>
+</head>
+<body>
+  <h1> Please Enter your Details For Our Dating Site! </h1>
+  <form action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php ." action="POST" enctype="multipart/form-data">
+  	<fieldset>
+      	<legend>Your Face</legend>
+        <label for="yourImage"> Your Image: </label>
+        <input type="file" name="yourImage" required onchange="uploadFile(this)">
+
+        <br>
+        <label for="imagePriview">Image preview: </label>
+        <img id="imagePriview"/>
+    </fieldset>
+    <fieldset>
+      <legend>Your General Details</legend>
+      <label for="name">Name:</label>
+      <input type="text" name="name" required placeholder="Your full Name">
+      <br>
+      <label for="gender">Gender:</label>
+      <input type="radio" name="gender">Male
+      <input type="radio" name="gender">Female
+
+      <br>
+      <label for="age">Age: </label>
+      <input type="number" name="age" required min="1" max="5">
+      <br>
+      <label for="dateOfBirth"> Date of birth: </label>
+      <input type="date" name="dateOfBirth" required>
+      <br>
+      <label for="color">Favorate color: </label>
+      <input type="color" name="color" required>
+      <br>
+      <label for="country"> Which country: </label>
+      <input type="list" name="country" required>
+      <datalist id="country">
+        <option value="India">
+        <option value="US">
+        <option value="UK">
+      </datalist>
+    </fieldset>
+    <fieldset>
+      <legend>Your Indicators</legend>
+
+      <label for="height">Height: </label>
+      <span id="minHeight" class="slidingLabel">Short</span>
+      <input type="range" name="height" min="0" max="10">
+      <span id="maxHeight" class="slidingLabel">Tail</span>
+      <br>
+      <label for="salary">Salary: </label>
+      <span id="minSalary" class="slidingLabel">Poor</span>
+      <input type="range" name="salary" min="0" max="10" step="2">
+      <span id="maxSalary" class="slidingLabel">Rich</span>
+    </fieldset>
+    <fieldset>
+      <legend> Your contenct Inforamation</legend>
+      <label for="email">Email: </label>
+      <input type="email" name="email" required>
+      <br>
+      <label for="mobile">Mobile: </label>
+      <input type="number" name="mobile" required>
+      <br>
+      <label for="address">Address: </label>
+      <textarea name="address"> </textarea>
+      <br>
+      <label for="MethodToContect">Method to contect you: </label>
+      <input type="checkbox" name="MethodToContect" value="email">Email
+      <input type="checkbox" name="MethodToContect" value="whatsup"> Whatsup
+      <input type="checkbox" name="MethodToConect" value="appChat">lis-app chat
+    </fieldset>
+    <input type="submit" name="Submitform" value="Sumbit">
+  </form>
+</body>
+</html>

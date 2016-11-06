@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+  <title> Your details</title>
+  <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+  <style>
+      fieldset {
+          display: block;
+          border-style: solid;
+          border-color:yellow;
+          border-width: 10px;
+          background-color: lightyellow;
+          margin-bottom:10px
+          width:720px;
+
+        }
+
+        #minHeight {
+          background: #c80707;
+        }
+        #maxHeight {
+          background: #7c10eb;
+        }
+
+        #minSalary{
+          background: #c80707;
+        }
+
+        #maxSalary{
+          background: #7c10eb;
+        }
+        .slidingLabel{
+            text-align:center;
+            display: inline-block;
+            padding: 4px;
+            margin-top: 1px;
+            color: #fdf8f8;
+        }
+
+        .options {
+          width:autooptions
+        }
+
+      label{
+         display: inline-block;
+         float: left;
+         clear: left;
+         width: 180px;
+         text-align: right;
+         vertical-align: top;
+      }
+
+      label:hover{
+        font-size: 40px;
+      }
+
+  </style>
+</head>
+<body>
+  <h1> Please Enter your Details For Our Dating Website! </h1>
+  <form action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" action="POST" enctype="multipart/form-data">
+  	<fieldset>
+      	<legend>Your Face</legend>
+        <label for="avatar"> Your Image: </label>
+        <input id="avatar" type="file" name="avatar" required>
+        <br>
+        <label for="preview">Image preview: </label>
+        <img id="preview"/>
+    </fieldset>
+    <fieldset>
+      <legend>Your General Details</legend>
+      <label for="name">Name:</label>
+      <input type="text" name="name" required placeholder="Your full Name">
+
+      <br>
+      <label for="gender" class="options">Gender:</label>
+      <input type="radio" name="gender" required>Male
+      <input type="radio" name="gender" required>Female
+
+      <br>
+      <label for="age">Age: </label>
+      <input type="number" name="age" value="18" required min="1" max="100" >
+
+      <br>
+      <label for="dateOfBirth"> Date of birth: </label>
+      <input type="date" name="dateOfBirth">
+
+      <br>
+      <label for="color">Favorate color: </label>
+      <input type="color" name="color" required>
+
+      <br>
+      <label for="country"> Which country: </label>
+      <select name="country">
+        <option value="-1">no selection</option>
+        <option value="IN">India</option>
+        <option value="US">United State</option>
+        <option value="HK">Honkong</option>
+        <option value="UK">United Kingdom</option>
+        <option value="JP">Japan</option>
+    </select>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>Your Indicators</legend>
+
+      <label for="height">Height: </label>
+      <span id="minHeight" class="slidingLabel">Short</span>
+      <input type="range" name="height" min="0" max="100">
+      <span id="maxHeight" class="slidingLabel">Tail</span>
+
+      <br>
+      <label for="salary">Salary: </label>
+      <span id="minSalary" class="slidingLabel">Poor</span>
+      <input type="range" name="salary" min="0" max="100" step="2">
+      <span id="maxSalary" class="slidingLabel">Rich</span>
+
+    </fieldset>
+    <fieldset>
+      <legend> Your contenct Inforamation</legend>
+      <label for="email">Email: </label>
+      <input type="email" name="email" required>
+
+      <br>
+      <label for="mobile">Mobile: </label>
+      <input type="tel" name="mobile" required>
+      <br>
+      <label for="address">Address: </label>
+      <textarea name="address"> </textarea>
+
+      <br>
+      <label for="MethodToContect">Method to contect you: </label>
+      <input type="checkbox" name="MethodToContect" value="email">Email
+      <input type="checkbox" name="MethodToContect" value="whatsup"> Whatsup
+      <input type="checkbox" name="MethodToConect" value="appChat">In-app chat
+    </fieldset>
+    <input type="submit" name="Submitform" value="Sumbit">
+  </form>
+</body>
+</html>
