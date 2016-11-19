@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body onload="do_game()">
+    <script type="text/javascript">
+    var colors = ["Pink","Red", "Camel","Green","Black", "Purple", "Blue","Orange", "Brown", "Yellow"];
+    var target = "";
+    var attempt = 0;
+
+    function do_game(){
+
+      colors = colors.sort();
+
+      var max_range = colors.length - 1;
+      var target_index = Math.floor((Math.random() * max_range ) % max_range);
+      target=colors[target_index];
+
+      alert(target);
+
+      var finished = false;
+
+      while(!finished){
+        attempt++;
+        finished = check_guess();
+      }
+    }
+
+     function check_guess(){
+       var txt_colors = colors.join(" ");
+
+         var guess_input = prompt("I am thinking of one of these colour\n \n" + txt_colors + "\n \n What color am I thing of?");
+         if(colors.indexOf(guess_input)<0){
+           alert("Sorry, I don't recognize your color!\n \n Please try again");
+           return false;
+         }
+         if(guess_input > target){
+           alert("Sorry, Yor guass is not correct!\n \n Hint: your color is alphabatically lower the mine \n \n Please try again");
+           return false;
+       }
+       if(guess_input < target){
+         alert("Sorry, Yor guass is not correct!\n \n Hint: your color is alphabatically higher the mine \n \n Please try again");
+         return false;
+       }
+       if(guess_input == target){
+         document.body.style.backgroundColor = target;
+         alert("congratulation! you have gussed the color\n \n It took you " + attempt + " to finish the game \n \n You can see the color in background");
+         return true;
+       }
+
+     }
+
+    </script>
+  </body>
