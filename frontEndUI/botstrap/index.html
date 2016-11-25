@@ -63,53 +63,54 @@
                         </ul>
                     </li>
                     <li>
-                        <li>
                             <a href="contactus.html">
                                 <span class="fa fa-envelope-o" aria-hidden="true"></span> Contact</a>
-                        </li>
-
-
-
-                </ul>
-
-                <ul class="nav navbar-nav navbar-right">
-                  <div style="height: 20px">
-
-
-                      <form class="form-inline" align-right id="rememberMe">
-                          <div class="form-group">
-                              <label class="sr-only" for="email">Email Address</label>
-                              <input type="email" class="form-control-input-sm" id="email" placeholder="Email">
-                          </div>
-                          <div class="form-group">
-                              <label class="sr-only" for="password">  Password</label>
-                              <input type="password" class="form-control-input-sm" id="password" placeholder="Password">
-                          </div>
-                          <div class="checkbox" >
-                              <label>
-                                  <input type="checkbox"> <a style="color:white">    Remember me</a>
-                              </label>
-                          </div>
-                          <button type="submit" class="btn btn-info btn-sm">Sign in</button>
-                          <div class="form-group" style="height: 50px">
-                          </div>
-                      </form>
-                  </div>
-
+                    </li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li>
+                      <a data-toggle="modal" data-target="#loginModal">
+                        <span class="glyphicon glyphicon-log-in"></span> Login
+                      </a>
+                    </li>
                 </ul>
             </div>
-
         </div>
-
-
     </nav>
 
+    <div id="loginModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+      <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Login </h4>
+            </div>
+            <div class="modal-body">
+              <form class="form-inline" id="rememberMe">
+                  <div class="form-group">
+                      <label class="sr-only" for="email">Email Address</label>
+                      <input type="email" class="form-control-input-sm" id="email" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                      <label class="sr-only" for="password">  Password</label>
+                      <input type="password" class="form-control-input-sm" id="password" placeholder="Password">
+                  </div>
+                  <div class="checkbox" >
+                      <label>
+                          <input type="checkbox"> Remember me
+                      </label>
+                  </div>
+                  <button type="submit" class="btn btn-info btn-sm">Sign in</button>
+                  <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
+              </form>
+            </div>
+        </div>
+      </div>
+  </div>
+
     <header class="jumbotron">
-
-
         <!-- Main component for a primary marketing message or call to actio -->
-
-
         <div class="container">
             <div class="row row-header">
                 <div class="col-xs-12 col-sm-8">
@@ -124,22 +125,18 @@
 
                 <div class="col-xs-12 col-sm-2">
                     <p style="padding:40px;"></p>
-                    <a href="#reservetable" class="btn btn-warning btn-block" role="button">Reserve table</a>
+                    <a type="button" class="btn btn-warning btn-block" data-html="true"
+                      data-toggle="tooltip" title="<b>Or Call us at +852 12345678</b>"
+                      data-placement="bottom" href="#reserveform">
+                      Reserve table
+                    </a>
                 </div>
             </div>
-
-
-
-
-
         </div>
-
-
     </header>
 
 
     <div class="container">
-
         <div class="row row-content">
             <div class="col-xs-12 col-sm-3 col-sm-push-9">
                 <p style="padding:20px; "></p>
@@ -207,7 +204,7 @@
             </div>
         </div>
 
-        <div class="row row-content" id="reservetable">
+        <div class="row row-content" id="reserveform">
             <div class="col-xs-12 col-sm-3">
                 <p style="padding:20px;"></p>
                 <h2 align="center">Reserve a Table</h2>
@@ -265,15 +262,6 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
     <footer class="row-footer">
         <div class="container">
             <div class="row">
@@ -316,9 +304,13 @@
         </div>
     </footer>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/jquery-1.11.2.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+       $(document).ready(function(){
+       $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 </body>
-
 </html>
