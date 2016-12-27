@@ -210,6 +210,44 @@
     }
   ],
   "feedback": [
-
+    {
+      "mychannel": "tel",
+      "firstName": "SUdhir",
+      "lastName": "Sharma",
+      "agree": true,
+      "email": "sudhirrlsharma@gmail.com",
+      "tel": {
+        "areaCode": "079",
+        "number": "27500286"
+      },
+      "comments": "Hi My first comment",
+      "id": 1
+    },
+    {
+      "mychannel": "Email",
+      "firstName": "Bhawaa",
+      "lastName": "Sharma",
+      "agree": true,
+      "email": "bhawana08@gmail.com",
+      "tel": {
+        "areaCode": "279",
+        "number": "275002896"
+      },
+      "comments": "sfafaf",
+      "id": 2
+    },
+    {
+      "mychannel": "Email",
+      "firstName": "Aditya",
+      "lastName": "Sharma",
+      "agree": false,
+      "email": "sdefsdf@gmail.com",
+      "tel": {
+        "areaCode": "989",
+        "number": "65289"
+      },
+      "comments": "hihioo",
+      "id": 3
+    }
   ]
 }
