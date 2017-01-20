@@ -151,4 +151,12 @@ angular.module('confusionApp')
               $scope.message = "Error: "+response.status + " " + response.statusText;
             });
         }])
+
+        .controller('MathController', ['$scope', function ($scope){
+          $scope.multiply = function (a, b){
+            return a*b;
+          }
+
+
+        }])
 ;
